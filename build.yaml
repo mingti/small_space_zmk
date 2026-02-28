@@ -20,4 +20,4 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: single_key_test
+    shield: settings_reset
