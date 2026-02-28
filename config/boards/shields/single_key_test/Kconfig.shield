@@ -1,0 +1,2 @@
+config SHIELD_SINGLE_KEY_TEST
+    def_bool $(shields_list_contains,single_key_test)
