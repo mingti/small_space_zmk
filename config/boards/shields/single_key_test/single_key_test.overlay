@@ -1,9 +1,7 @@
 / {
     chosen { zmk,kscan = &kscan0; };
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row"; // 改为列扫行
-        row-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // P0.06(D1)平时上拉，接地触发
-        col-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>; // P0.08(D2)作为扫描源
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
