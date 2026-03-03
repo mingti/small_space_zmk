@@ -5,6 +5,21 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+
+
+    // 定义组合键解锁studio
+    combos {
+        compatible = "zmk,combos";
+        
+        // 定义一个名为 "unlock_studio" 的组合
+        unlock_studio {
+            timeout-ms = <50>;          // 两个键按下的时间间隔（毫秒）
+            key-positions = <0 1>;      // 对应矩阵中的索引：0 是第一个键 (A)，1 是第二个键 (B)
+            bindings = <&studio_unlock>; // 触发的行为
+        };
+    };
+
+
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
     keymap {
