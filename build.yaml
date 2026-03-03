@@ -19,9 +19,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: small_space
-  - board: nice_nano_v2
-    shield: settings_reset
+  # - board: nice_nano_v2
+  #   shield: small_space
+  # - board: nice_nano_v2
+  #   shield: settings_reset
   - board: nice_nano_v2
     shield: ble_single_key
