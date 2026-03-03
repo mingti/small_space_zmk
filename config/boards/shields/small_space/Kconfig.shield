@@ -1,2 +1,0 @@
-config SHIELD_SMALL_SPACE
-    def_bool $(shields_list_contains,small_space)

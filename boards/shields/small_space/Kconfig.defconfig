@@ -3,4 +3,4 @@ if SHIELD_SMALL_SPACE
 config ZMK_KEYBOARD_NAME
     default "small_space"
 
-endif
+endif # SHIELD_SMALL_SPACE
