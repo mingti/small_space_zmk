@@ -1,0 +1,6 @@
+if SHIELD_BLE_SINGLE_KEY
+
+config ZMK_KEYBOARD_NAME
+    default "ble_single_key"
+
+endif # SHIELD_BLE_SINGLE_KEY
