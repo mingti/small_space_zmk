@@ -5,14 +5,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-
-
-    // 定义组合键解锁studio
     combos {
         compatible = "zmk,combos";
-        
         combo_S {
-            timeout-ms = <500>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp S>;
         };
