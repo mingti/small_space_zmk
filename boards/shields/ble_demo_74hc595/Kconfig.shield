@@ -1,0 +1,2 @@
+config SHIELD_BLE_DEMO_74HC595
+    def_bool $(shields_list_contains,ble_demo_74hc595)

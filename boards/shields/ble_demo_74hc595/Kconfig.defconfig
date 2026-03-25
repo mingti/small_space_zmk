@@ -1,0 +1,6 @@
+if SHIELD_BLE_DEMO_74HC595
+
+config ZMK_KEYBOARD_NAME
+    default "ble_demo_74hc595"
+
+endif # SHIELD_BLE_DEMO_74HC595
