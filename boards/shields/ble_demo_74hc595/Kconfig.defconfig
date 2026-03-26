@@ -3,4 +3,7 @@ if SHIELD_BLE_DEMO_74HC595
 config ZMK_KEYBOARD_NAME
     default "ble_demo_595"
 
+config SPI
+    default y
+
 endif # SHIELD_BLE_DEMO_74HC595
