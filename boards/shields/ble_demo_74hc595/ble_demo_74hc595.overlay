@@ -124,7 +124,7 @@
     pinctrl-names = "default", "sleep";
 
     // 74hc595 时钟引脚
-    cs-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>
+    cs-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
 
     shifter: 595@0 {
         compatible = "zmk,gpio-595";
