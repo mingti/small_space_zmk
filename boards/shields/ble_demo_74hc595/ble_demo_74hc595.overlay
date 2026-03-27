@@ -130,7 +130,7 @@
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
-        spi-max-frequency = <200000>;
+        spi-max-frequency = <1000000>;
         reg = <0>; /* 对应上面 cs-gpios 的索引 0 */
         #gpio-cells = <2>;
         ngpios = <16>;  //595级联数量*8
