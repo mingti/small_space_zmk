@@ -15,7 +15,7 @@
 
     
 
-    kscan: kscan {
+    kscan0: kscan {
         // If the hardware does not use a switch matrix, change this to the
         // appropriate driver and update the properties below to match.
         // See https://zmk.dev/docs/config/kscan for supported key scan drivers.
