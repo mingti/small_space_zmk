@@ -3,4 +3,7 @@ if SHIELD_GRID25
 config ZMK_KEYBOARD_NAME
     default "grid25"
 
+config SPI
+    default y
+
 endif # SHIELD_GRID25
