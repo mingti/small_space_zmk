@@ -26,7 +26,7 @@
 
         default_layer {
             bindings = <
-&kp HOME  &kp PG_UP  &kp PAGE_DOWN  &kp END  &kp DELETE  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp KP_MINUS  &kp KP_NUMBER_4  &kp LC(KP_NUMBER_5)  &kp KP_NUMBER_6  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp UP_ARROW  &kp ENTER  &kp SPACE  &kp KP_NUMBER_0  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G  &kp H  &kp I  &kp J  &kp K  &kp L  &kp M  &kp N  &kp O  &kp P  &kp Q  &kp R  &kp S  &kp T  &kp U  &kp V  &kp W  &kp X  &kp Y
             >;
         };
     };
