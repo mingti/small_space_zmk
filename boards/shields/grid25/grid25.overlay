@@ -161,6 +161,7 @@
 //    status = "disabled";
 //};
 
+/*
 /* 1. 用绝对路径禁用 nice_nano_v2 底层自带的外部电源节点 */
 / {
     ext-power {
@@ -176,3 +177,4 @@
         output-high;
     };
 };
+*/
