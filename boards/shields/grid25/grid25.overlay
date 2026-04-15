@@ -62,12 +62,12 @@
     };
     
     //外部电源控制引脚
-//    ext-power {
-//        compatible = "zmk,ext-power-generic";
-//        label = "EXT_POWER";
-//        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>; /* 这里指明了 P0.13 */
-//        init-delay-ms = <50>;
-//    };
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        label = "EXT_POWER";
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>; /* 这里指明了 P0.13 */
+        init-delay-ms = <50>;
+    };
     
 };
 
@@ -157,9 +157,9 @@
 };
 
 /* 禁用 ZMK 默认的外部电源控制节点，防止系统在睡眠时自动切断电源 */
-//&ext_power {
-//    status = "disabled";
-//};
+&ext_power {
+    status = "disabled";
+};
 
 /* 强制接管 P0.13 引脚（nice!nano v2 的 EXT_VCC 控制引脚），并始终输出高电平 */
 &gpio0 {
