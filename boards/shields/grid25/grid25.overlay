@@ -161,20 +161,20 @@
 //    status = "disabled";
 //};
 
-/*
+
 /* 1. 用绝对路径禁用 nice_nano_v2 底层自带的外部电源节点 */
-/ {
-    ext-power {
-        status = "disabled";
-    };
-};
+/// {
+//    ext-power {
+//        status = "disabled";
+//    };
+//};
 
 /* 强制接管 P0.13 引脚（nice!nano v2 的 EXT_VCC 控制引脚），并始终输出高电平 */
-&gpio0 {
-    ext_vcc_keep_on {
-        gpio-hog;
-        gpios = <13 GPIO_ACTIVE_HIGH>;
-        output-high;
-    };
-};
-*/
+//&gpio0 {
+//    ext_vcc_keep_on {
+//        gpio-hog;
+//        gpios = <13 GPIO_ACTIVE_HIGH>;
+//        output-high;
+//    };
+//};
+
