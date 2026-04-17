@@ -21,24 +21,26 @@
 include:
   # - board: nice_nano_v2
   #   shield: small_space
+
+  - board: nice_nano_v2
+    shield: settings_reset
+
   # - board: nice_nano_v2
-  #   shield: settings_reset
-  - board: nice_nano_v2
-    shield: ble_single_key
-    # snippet:
-    #   - studio-rpc-usb-uart
-    #   - zmk-usb-logging
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  #   shield: ble_single_key
+  #   # snippet:
+  #   #   - studio-rpc-usb-uart
+  #   #   - zmk-usb-logging
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
 
-  - board: nice_nano_v2
-    shield: ble_demo_74hc595
-    # snippet:
-    #   - studio-rpc-usb-uart
-    #   - zmk-usb-logging
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: nice_nano_v2
+  #   shield: ble_demo_74hc595
+  #   # snippet:
+  #   #   - studio-rpc-usb-uart
+  #   #   - zmk-usb-logging
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
 
   - board: nice_nano_v2
@@ -47,4 +49,14 @@ include:
     #   - studio-rpc-usb-uart
     #   - zmk-usb-logging
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_KEYBOARD_NAME=\"Grid25_cyy\"
+    artifact-name: grid25_cyy
+
+  - board: nice_nano_v2
+    shield: grid25
+    # snippet:
+    #   - studio-rpc-usb-uart
+    #   - zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_KEYBOARD_NAME=\"Grid25_xyt\"
+    artifact-name: grid25_xyt
