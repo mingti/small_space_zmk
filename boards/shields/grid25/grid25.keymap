@@ -63,34 +63,30 @@ macros {
         };
     };
     behaviors {
-            ht_bt_0: ht_bt_0 {
-                compatible = "zmk,behavior-hold-tap";
-                label = "HT_BT_0";
-                #binding-cells = <0>;
-                flavor = "hold-preferred";
-                tapping-term-ms = <250>;
-                // <长按触发清空宏>, <短按触发切换宏>
-                bindings = <&macro_bt_clr_0>, <&macro_bt_sel_0>; 
-            };
-
-            ht_bt_1: ht_bt_1 {
-                compatible = "zmk,behavior-hold-tap";
-                label = "HT_BT_1";
-                #binding-cells = <0>;
-                flavor = "hold-preferred";
-                tapping-term-ms = <250>;
-                bindings = <&macro_bt_clr_1>, <&macro_bt_sel_1>;
-            };
-
-            ht_bt_2: ht_bt_2 {
-                compatible = "zmk,behavior-hold-tap";
-                label = "HT_BT_2";
-                #binding-cells = <0>;
-                flavor = "hold-preferred";
-                tapping-term-ms = <250>;
-                bindings = <&macro_bt_clr_2>, <&macro_bt_sel_2>;
-            };
+        ht_bt_0: ht_bt_0 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // 强制改为 2
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&macro_bt_clr_0>, <&macro_bt_sel_0>; 
         };
+
+        ht_bt_1: ht_bt_1 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // 强制改为 2
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&macro_bt_clr_1>, <&macro_bt_sel_1>;
+        };
+
+        ht_bt_2: ht_bt_2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // 强制改为 2
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&macro_bt_clr_2>, <&macro_bt_sel_2>;
+        };
+    };
 
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
@@ -106,7 +102,7 @@ macros {
 
         layer_1 {
             bindings = <
-&to 0  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &ht_bt_0  &ht_bt_1  &ht_bt_2  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
+&to 0  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &ht_bt_0 0 0  &ht_bt_1 0 0  &ht_bt_2 0 0  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
             >;
         };
     };
