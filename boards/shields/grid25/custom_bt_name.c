@@ -3,8 +3,11 @@
 #include <zephyr/bluetooth/bluetooth.h>
 #include <stdio.h>
 
-// 这个函数会在系统启动时自动运行
-static int init_custom_bt_name(void) {
+// 定义一个延时工作队列
+static struct k_work_delayable name_update_work;
+
+// 真正执行改名的核心函数
+static void update_name_handler(struct k_work *work) {
     bt_addr_le_t addrs[1];
     size_t count = 1;
     
@@ -13,18 +16,24 @@ static int init_custom_bt_name(void) {
     if (count > 0) {
         char bt_name[32];
         
-        // ZMK 底层的 MAC 地址在 addrs[0].a.val 中是倒序（小端）存储的
-        // val[0] 是地址的最后两位，val[1] 是倒数三四位
-        // 我们提取 MAC 地址的最后两个字节作为 4 位随机码后缀
+        // 提取 MAC 地址的最后两个字节作为后缀
         snprintf(bt_name, sizeof(bt_name), "%s_%02X%02X", 
                  CONFIG_ZMK_KEYBOARD_NAME, 
                  addrs[0].a.val[1], addrs[0].a.val[0]);
         
-        // 调用底层 API 更新蓝牙名称
+        // 强行更新蓝牙名称
         bt_set_name(bt_name);
     }
+}
+
+// 系统启动时触发的初始化函数
+static int init_custom_bt_name(void) {
+    // 初始化延时任务
+    k_work_init_delayable(&name_update_work, update_name_handler);
+    // 设定在系统启动 1500 毫秒 (1.5秒) 后执行改名任务，确保抢在 ZMK 初始化之后
+    k_work_schedule(&name_update_work, K_MSEC(1500));
     return 0;
 }
 
-// 设定为 APPLICATION 级别，优先级设为 99，确保在蓝牙堆栈初始化完毕后再执行改名
+// 放在 APPLICATION 级别执行
 SYS_INIT(init_custom_bt_name, APPLICATION, 99);
