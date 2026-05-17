@@ -22,7 +22,13 @@
 
 
     // 蓝牙清空
-    macros {
+macros {
+        // ====== 设备 0 ======
+        macro_bt_sel_0: macro_bt_sel_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>;
+        };
         macro_bt_clr_0: macro_bt_clr_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -30,6 +36,12 @@
             bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
         };
 
+        // ====== 设备 1 ======
+        macro_bt_sel_1: macro_bt_sel_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>;
+        };
         macro_bt_clr_1: macro_bt_clr_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -37,6 +49,12 @@
             bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
         };
 
+        // ====== 设备 2 ======
+        macro_bt_sel_2: macro_bt_sel_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>;
+        };
         macro_bt_clr_2: macro_bt_clr_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -45,33 +63,34 @@
         };
     };
     behaviors {
-        ht_bt_0: ht_bt_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_BT_0";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&macro_bt_clr_0>, <&bt BT_SEL 0>;
-        };
+            ht_bt_0: ht_bt_0 {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HT_BT_0";
+                #binding-cells = <0>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <250>;
+                // <长按触发清空宏>, <短按触发切换宏>
+                bindings = <&macro_bt_clr_0>, <&macro_bt_sel_0>; 
+            };
 
-        ht_bt_1: ht_bt_1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_BT_1";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&macro_bt_clr_1>, <&bt BT_SEL 1>;
-        };
+            ht_bt_1: ht_bt_1 {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HT_BT_1";
+                #binding-cells = <0>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <250>;
+                bindings = <&macro_bt_clr_1>, <&macro_bt_sel_1>;
+            };
 
-        ht_bt_2: ht_bt_2 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_BT_2";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&macro_bt_clr_2>, <&bt BT_SEL 2>;
+            ht_bt_2: ht_bt_2 {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HT_BT_2";
+                #binding-cells = <0>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <250>;
+                bindings = <&macro_bt_clr_2>, <&macro_bt_sel_2>;
+            };
         };
-    };
 
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
