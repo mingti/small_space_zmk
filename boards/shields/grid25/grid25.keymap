@@ -8,7 +8,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // zmk studio 解锁
+
 
         combo_bootloader {
             timeout-ms = <50>;
@@ -51,7 +51,11 @@
 
         default_layer {
             bindings = <
-&kp ESC  &macro_cut  &macro_copy  &macro_paste  &kp BACKSPACE  &kp N7  &kp N8  &kp N9  &kp HOME  &kp PG_UP  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp END  &kp PG_DN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp UP_ARROW  &kp ENTER  &kp SPACE  &kp N0  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+            &kp A  &kp B  &kp C  &kp D  &kp E
+            &kp F  &kp G  &kp H  &kp I  &kp J
+            &kp K  &kp L  &kp M  &kp N  &kp O
+            &kp P  &kp Q  &kp R  &kp S  &kp T
+            &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
             >;
         };
     };
