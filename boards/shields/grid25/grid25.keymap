@@ -3,12 +3,12 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
+#include <dt-bindings/zmk/rgb.h>
 / {
     combos {
         compatible = "zmk,combos";
 
-
+        // zmk studio 解锁
 
         combo_bootloader {
             timeout-ms = <50>;
@@ -55,7 +55,7 @@
             &kp F  &kp G  &kp H  &kp I  &kp J
             &kp K  &kp L  &kp M  &kp N  &kp O
             &kp P  &kp Q  &kp R  &kp S  &kp T
-            &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_ON  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
+            &rgb_ug RGB_TOG  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
             >;
         };
     };
