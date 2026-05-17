@@ -22,12 +22,6 @@
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
 
     macros {
-        zhao_pian_fan_pai: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "NEW_MACRO";
-        };
 
         macro_cut: macro_cut {
             compatible = "zmk,behavior-macro";
