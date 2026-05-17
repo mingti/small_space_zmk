@@ -10,11 +10,11 @@
 
         // zmk studio 解锁
 
-        combo_studio_unlock {
+        combo_bootloader {
             timeout-ms = <50>;
             require-prior-idle-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&studio_unlock>;
+            bindings = <&bootloader>;
         };
     };
 
@@ -22,6 +22,7 @@
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
 
     macros {
+
 
         macro_cut: macro_cut {
             compatible = "zmk,behavior-macro";
